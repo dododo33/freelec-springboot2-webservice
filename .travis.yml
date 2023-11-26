@@ -10,7 +10,7 @@ before_install:
   - chmod +x gradlew
 
 # Travis CI 서버의 Home
-cache: 
+cache:
   directories:
     - '$HOME/.m2/repository'
     - '$HOME/.gradle'
@@ -28,7 +28,7 @@ before_deploy:
   - mv before-deploy/before-deploy.zip deploy/freelec-springboot2-webservice.zip # deploy로 zip파일 이동
 
 deploy:
-  - provider: s3
+  - provider: s3 
     access_key_id: $AWS_ACCESS_KEY # Travis repo settings에 설정된 값
     secret_access_key: $AWS_SECRET_KEY # Travis repo settings에 설정된 값
     bucket: freelec-springboot-build # S3 버킷
